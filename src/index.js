@@ -10,7 +10,7 @@ app.use("/authors/", authorRoutes);
 async function startServer() {
   try {
     await mongoose.connect(
-      "mongodb://127.0.0.1:27017/library?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2",
+      "mongodb://127.0.0.1:27017/library_management?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
