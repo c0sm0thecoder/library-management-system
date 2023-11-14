@@ -15,7 +15,8 @@ const authorSchema = new Schema(
         delete ret._id;
       },
     },
-  }
+    versionKey: false,
+  },
 );
 
 module.exports = mongoose.model("Author", authorSchema);

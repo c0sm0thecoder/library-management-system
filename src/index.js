@@ -2,10 +2,14 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 
 const authorRoutes = require("./routes/AuthorRoutes");
+const bookRoutes = require("./routes/BookRoutes");
 
 var app = express();
 
+app.use(express.json());
+
 app.use("/authors/", authorRoutes);
+app.use("/books/", bookRoutes);
 
 async function startServer() {
   try {
@@ -17,7 +21,7 @@ async function startServer() {
       }
     );
 
-    app.listen(8080);
+    app.listen(8081);
   } catch (error) {
     console.error("Error starting the server: ", error);
   }

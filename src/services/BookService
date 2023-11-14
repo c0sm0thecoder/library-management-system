@@ -1,0 +1,43 @@
+const bookRepository = require("../repositories/BookRepository");
+
+const getAllBooks = async () => {
+  try {
+    const books = await bookRepository.getAllBooks();
+    if (!books) {
+      throw new Error("Books could not be found.");
+    }
+    return books;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getBookById = async (id) => {
+  try {
+    const book = await bookRepository.getBookById(id);
+    if (!book) {
+      throw new Error("Book could not be found.");
+    }
+    return book;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const saveBook = async (book) => {
+  try {
+    const book = bookRepository.saveBook(book);
+    if (!book) {
+      throw new Error("Book could not be saved.");
+    }
+    return book;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {
+  getAllBooks,
+  getBookById,
+  saveBook,
+};
